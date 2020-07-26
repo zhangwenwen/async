@@ -14,7 +14,7 @@ endif
 all: lhttp_parser.so lhttp_parser.a
 
 http-parser/http_parser.o:
-	CPPFLAGS=-fPIC $(MAKE) -C http-parser http_parser.o
+	CPPFLAGS=-fPIC $(MAKE) -C http-parser http_parser.o -Werror=implicit-fallthrough=0
 
 lhttp_parser.o: lhttp_parser.c
 	$(CC) -c $< -o $@ ${CFLAGS}
